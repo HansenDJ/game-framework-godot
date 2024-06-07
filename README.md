@@ -13,12 +13,12 @@ GDScript
 # Useful Websites
 
 * [Godot Engine 4.2 documentation](https://docs.godotengine.org/en/stable/index.html)
-* Movement and Physics
-  [YouTube: How to make a Video Game - Godot Beginner Tutorial - Brackeys](https://www.youtube.com/watch?v=LOhfqjmasi0)
-  Tilemaps
-  [YouTube: Godot 4 TileMap Tutorial Ep 1 | Setup, Layers, Animation - Jackie Codes](https://www.youtube.com/watch?v=G6TC6ukmSc4)
-  UI
-  [YouTube: Adding UI & Collectibles - Getting Started with Godot 4 | Godot 4.1 Tutorial - Muddy Wolf](https://www.youtube.com/watch?v=o0XrbBa2IJM)
+Movement and Physics:
+* [YouTube: How to make a Video Game - Godot Beginner Tutorial - Brackeys](https://www.youtube.com/watch?v=LOhfqjmasi0)
+Tilemaps
+* [YouTube: Godot 4 TileMap Tutorial Ep 1 | Setup, Layers, Animation - Jackie Codes](https://www.youtube.com/watch?v=G6TC6ukmSc4)
+UI
+* [YouTube: Adding UI & Collectibles - Getting Started with Godot 4 | Godot 4.1 Tutorial - Muddy Wolf](https://www.youtube.com/watch?v=o0XrbBa2IJM)
 
 # Future Work
 
