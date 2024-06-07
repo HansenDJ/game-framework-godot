@@ -8,7 +8,7 @@ This game is currently a concept game made in 24 hours. You play as a knight str
 
 Godot Engine v4.2.2
 
-GDScript
+Language: GDScript
 
 # Useful Websites
 
