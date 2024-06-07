@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://kdfhlglbitnq"]
+
+[ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_3jroj"]
+[ext_resource type="PackedScene" uid="uid://owsv80nwuces" path="res://scenes/level_1.tscn" id="2_2cxd3"]
+[ext_resource type="PackedScene" uid="uid://do2nsjthhvn58" path="res://scenes/level_2.tscn" id="3_pchw3"]
+[ext_resource type="PackedScene" uid="uid://cu3wktd8fuoan" path="res://scenes/credits.tscn" id="4_250hj"]
+
+[node name="Game_Manager" type="Node2D"]
+script = ExtResource("1_3jroj")
+
+[node name="level_1" parent="." instance=ExtResource("2_2cxd3")]
+
+[node name="level_2" parent="." instance=ExtResource("3_pchw3")]
+
+[node name="Credits" parent="." instance=ExtResource("4_250hj")]

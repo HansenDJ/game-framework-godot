@@ -1,0 +1,135 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgon1yf5132d"]
+
+[ext_resource type="Script" path="res://scripts/UI.gd" id="1_82m1c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_77xj2"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_srqi8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j47ip"]
+font_size = 128
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hid8u"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 16
+border_width_top = 8
+border_width_right = 16
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_de0gd"]
+bg_color = Color(0.864675, 0.864675, 0.864675, 1)
+border_width_left = 16
+border_width_top = 8
+border_width_right = 16
+border_width_bottom = 8
+border_color = Color(0.862745, 0.862745, 0.862745, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnrrv"]
+border_width_left = 16
+border_width_top = 8
+border_width_right = 16
+border_width_bottom = 8
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_82m1c")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InGameUI" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HPLabel" type="Label" parent="Control/InGameUI"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "HP: 100/100"
+label_settings = SubResource("LabelSettings_77xj2")
+
+[node name="GameOverUI" type="MarginContainer" parent="Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureRect" type="TextureRect" parent="Control/GameOverUI"]
+modulate = Color(0, 0, 0, 0.705882)
+layout_mode = 2
+texture = SubResource("CanvasTexture_srqi8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/GameOverUI"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 64
+
+[node name="GameOverLabel" type="Label" parent="Control/GameOverUI/VBoxContainer"]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_j47ip")
+
+[node name="RetryButton" type="Button" parent="Control/GameOverUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_hid8u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_de0gd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lnrrv")
+text = "Retry"
+
+[node name="NextLvlButton" type="Button" parent="Control/GameOverUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_hid8u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_de0gd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lnrrv")
+text = "Next Level"
+
+[connection signal="pressed" from="Control/GameOverUI/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Control/GameOverUI/VBoxContainer/RetryButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/GameOverUI/VBoxContainer/NextLvlButton" to="." method="_on_next_lvl_button_pressed"]
+[connection signal="pressed" from="Control/GameOverUI/VBoxContainer/NextLvlButton" to="." method="_on_button_pressed"]
